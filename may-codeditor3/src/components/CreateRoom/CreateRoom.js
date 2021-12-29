@@ -12,12 +12,12 @@ const CreateRoom = () => {
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     var charLength = characters.length;
 
-    //LOOP THROUGH LENGTH OF CHARACTERS HWEVER MANY TIMES HAS BEEN SPECIFIED LATER ON IN PROG AND 
+    //LOOP THROUGH LENGTH OF CHARACTERS H0WEVER MANY TIMES HAS BEEN SPECIFIED LATER ON IN PROG AND 
     //populate array with characters
     for( var i = 0; i < length; i++){
         result.push(characters.charAt(Math.floor(Math.random()*charLength)));
     };
-     //populateresult array with no space, to form room name
+     //populate result array with no space, to form room name
     return result.join('');
   };
 
@@ -34,7 +34,6 @@ const CreateRoom = () => {
         <div className="col" style={{marginTop: 100}}>
           <div className="card p-3 logincard" style={{width: '30rem'}}>
               <p className="text-center">CREATE A ROOM</p>
-
               <div className="card-body">
                 <div className="mb-5">
                     <label  className="form-label">Username</label>
@@ -55,19 +54,15 @@ const CreateRoom = () => {
       </>
     );
   };
-
-
     return (
-
       <div className="container" >
         <div class="row">
           {/* Component is originally set to false by default and displays loginForm to create room 
-          else, if set to true, pass room name (automatically gen), username, and create ststus (of true) to diff from join  */}
+          else, if set to true, pass room name (automatically gen), username, and create status (of true) to diff from join  */}
           { isData === false ? loginForm() : <Chat room={randomRoom(7)} name={name} create={true}/>}
         </div>
       </div>
     );
 }
-
 
 export default CreateRoom;

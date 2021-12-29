@@ -58,6 +58,12 @@ io.on('connect', (socket) => {
         io.to(user.room).emit('codeMessage', { user: user.name, text: message });
     });
 
+    //*******************8th Nov 21 addition */
+    // socket.on('play', playMsg => {
+    //     io.emit('play', playMsg);
+    // });
+     
+
     socket.on('disconnect', () => {
         const user = removeUser(socket.id);
 

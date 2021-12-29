@@ -3,10 +3,9 @@ import ReactEmoji from 'react-emoji';
 
 const Notification = ({ notification: {text, user}, name }) => {
     let sentByCurrentUser = false;
-
     const trimName = name.trim().toLowerCase();
 
-    if(user === trimName) {  //if user equals to name that user inputs set whatever 
+    if(user === trimName) {  //if user name equals to name that user inputs set whatever 
         //is sent by that user to true so that it does the true section in conditional rendering below
         sentByCurrentUser = true;
     }
